@@ -1,0 +1,6 @@
+{
+  "name": "CargaFlow Lead Time Analyzer",
+  "description": "Análise de lead time operacional de veículos em CD (Externa e Abastecimento) com dashboards, SLA dinâmico e insights automáticos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

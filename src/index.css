@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&family=Space+Grotesk:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-panel: var(--panel);
+  --color-gm-red: var(--gm-red);
+  --color-gm-blue: var(--gm-blue);
+
+  /* Legacy aliases */
+  --color-bento-bg: var(--background);
+  --color-bento-card: var(--card);
+  --color-bento-border: var(--border);
+  --color-bento-accent: var(--primary);
+  --color-bento-text-primary: var(--foreground);
+  --color-bento-text-secondary: var(--muted-foreground);
+  --color-bento-success: var(--success);
+  --color-bento-warning: var(--warning);
+  --color-bento-error: var(--destructive);
+}
+
+/* ── Light mode ────────────────────────────────────── */
+:root {
+  --font-body: "Inter", "Aptos", system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --radius: 0.5rem;
+  --background: oklch(0.972 0.012 94.72);
+  --foreground: oklch(0.174 0.036 229.38);
+  --card: oklch(0.995 0.006 91.6);
+  --card-foreground: oklch(0.174 0.036 229.38);
+  --popover: oklch(0.995 0.006 91.6);
+  --popover-foreground: oklch(0.174 0.036 229.38);
+  --primary: oklch(0.52 0.218 264.0);        /* GM Blue #2563EB */
+  --primary-foreground: oklch(0.985 0.004 80);
+  --secondary: oklch(0.916 0.041 196.4);
+  --secondary-foreground: oklch(0.2 0.052 223.4);
+  --muted: oklch(0.925 0.019 89.8);
+  --muted-foreground: oklch(0.46 0.039 231.2);
+  --accent: oklch(0.705 0.183 57.6);
+  --accent-foreground: oklch(0.171 0.033 229.1);
+  --destructive: oklch(0.577 0.245 27.3);    /* GM Red #DC2626 */
+  --destructive-foreground: oklch(0.985 0.004 80);
+  --border: oklch(0.848 0.026 206.2);
+  --input: oklch(0.882 0.022 206.2);
+  --ring: oklch(0.52 0.218 264.0);
+  --chart-1: oklch(0.52 0.218 264.0);
+  --success: oklch(0.61 0.147 153.8);
+  --warning: oklch(0.79 0.171 78.2);
+  --surface: oklch(0.948 0.016 92.1);
+  --surface-elevated: oklch(0.995 0.006 91.6 / 84%);
+  --panel: oklch(0.93 0.018 203.5 / 76%);
+  --gm-red: oklch(0.577 0.245 27.3);
+  --gm-blue: oklch(0.52 0.218 264.0);
+}
+
+/* ── Dark mode — Grupo Mateus palette ──────────────── */
+.dark {
+  /*
+   * Background: deep navy (#0F172A → slate-950)
+   * Cards:  dark navy (#1E293B → slate-800)
+   * Primary: Grupo Mateus Blue  (#3B82F6 → blue-500, bright on dark)
+   * Danger:  Grupo Mateus Red   (#EF4444 → red-500)
+   */
+  --background: oklch(0.129 0.042 264.7);    /* #0F172A */
+  --foreground: oklch(0.961 0.007 247.9);    /* #F3F4F6 */
+  --card: oklch(0.208 0.044 264.0);          /* #1E293B */
+  --card-foreground: oklch(0.961 0.007 247.9);
+  --popover: oklch(0.208 0.044 264.0);
+  --popover-foreground: oklch(0.961 0.007 247.9);
+  --primary: oklch(0.623 0.214 264.3);       /* GM Blue #3B82F6 */
+  --primary-foreground: oklch(0.12 0.032 264.0);
+  --secondary: oklch(0.268 0.044 264.0);
+  --secondary-foreground: oklch(0.945 0.018 264.0);
+  --muted: oklch(0.248 0.035 264.0);
+  --muted-foreground: oklch(0.728 0.036 264.0);
+  --accent: oklch(0.623 0.214 264.3);
+  --accent-foreground: oklch(0.12 0.032 264.0);
+  --destructive: oklch(0.633 0.237 27.3);    /* GM Red #EF4444 */
+  --destructive-foreground: oklch(0.985 0.004 80);
+  --border: oklch(0.279 0.044 264.0);        /* #334155 */
+  --input: oklch(0.248 0.040 264.0);
+  --ring: oklch(0.623 0.214 264.3);
+  --chart-1: oklch(0.623 0.214 264.3);
+  --success: oklch(0.69 0.153 153.8);
+  --warning: oklch(0.82 0.164 78.2);
+  --surface: oklch(0.160 0.040 264.0);
+  --surface-elevated: oklch(0.235 0.044 264.0 / 84%);
+  --panel: oklch(0.208 0.044 264.0 / 76%);
+  --gm-red: oklch(0.633 0.237 27.3);         /* #EF4444 */
+  --gm-blue: oklch(0.623 0.214 264.3);       /* #3B82F6 */
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+}
+
+/* ── Shared card ────────────────────────────────────── */
+.bento-grid-card {
+  @apply bg-card text-card-foreground border border-border rounded-2xl p-5 shadow-sm transition-all duration-300;
+}
+
+/* ── Grupo Mateus brand cards ───────────────────────── */
+.gm-card-red {
+  @apply rounded-2xl p-5 border transition-all duration-300;
+  background: oklch(from var(--gm-red) l c h / 0.08);
+  border-color: oklch(from var(--gm-red) l c h / 0.30);
+}
+
+.gm-card-blue {
+  @apply rounded-2xl p-5 border transition-all duration-300;
+  background: oklch(from var(--gm-blue) l c h / 0.08);
+  border-color: oklch(from var(--gm-blue) l c h / 0.30);
+}
+
+/* ── Scrollbar ──────────────────────────────────────── */
+.custom-scrollbar::-webkit-scrollbar { width: 4px; height: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
+
+/* ── Table zebra stripe ─────────────────────────────── */
+.data-table tbody tr:nth-child(even) {
+  background: oklch(from var(--gm-blue) l c h / 0.04);
+}
+.data-table tbody tr:hover {
+  background: oklch(from var(--gm-blue) l c h / 0.10);
+}
+
+@layer utilities {
+  .control-grid {
+    background-image:
+      linear-gradient(color-mix(in oklab, var(--border) 44%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in oklab, var(--border) 44%, transparent) 1px, transparent 1px);
+    background-size: 38px 38px;
+  }
+
+  .control-glow {
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 0%), color-mix(in oklab, var(--primary) 28%, transparent), transparent 34rem);
+  }
+}
