@@ -1,4 +1,4 @@
-import api from '../api/client';
+import {api,apiV2} from '../api/client';
 import type {
   CreateTicketDto, UpdateTicketDto, EscalateTicketDto,
   CommentResponseDto, CreateCommentDto, AttachmentResponseDto,
@@ -20,11 +20,9 @@ export const dashboardApi = {
 
 export const authApi = {
   login:   (email: string, password: string) =>
-    api.post(version+'/auth/login', { email, password }).then(r => r.data),
-  register: (name: string, email: string, password: string) =>
-    api.post(version+'/auth/register', { name, email, password }).then(r => r.data),
+    apiV2.post('portaria/v1/usuario/login', { email, password }).then(r => r.data),
   refresh: (refreshToken: string) =>
-    api.post(version+'/auth/refresh', { refreshToken }).then(r => r.data),
+    apiV2.post(version+'/auth/refresh', { refreshToken }).then(r => r.data),
   logout:  () => api.post(version+'/auth/logout'),
 };
 

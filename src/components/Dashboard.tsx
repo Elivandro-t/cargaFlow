@@ -455,7 +455,7 @@ export function Dashboard() {
                     <label className="text-xs font-bold text-gray-500 dark:text-slate-500 uppercase tracking-widest">Placa</label>
                     <div className="relative">
                       <input
-                        value={placa}
+                        value={placa as any}
                         onChange={e => setPlaca(e.target.value)}
                         placeholder="Ex: ABC-1234"
                         className="w-full bg-gray-50 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-lg px-3 pr-7 py-2 text-base text-gray-800 dark:text-slate-200 placeholder-gray-400 dark:placeholder-slate-600 outline-none focus:ring-2 focus:ring-blue-500 transition-all"
@@ -485,7 +485,6 @@ export function Dashboard() {
                       )}
                     </div>
                   </div>
-
                   {/* DATA INÍCIO */}
                   <div className="flex flex-col gap-1">
                     <label className="text-xs font-bold text-gray-500 dark:text-slate-500 uppercase tracking-widest">Data Início</label>
@@ -885,7 +884,7 @@ export function Dashboard() {
       </div>
 
       {/* ── DataGrid ─────────────────────────────────── */}
-      <DataGrid data={filteredData} placaSearch={placa} transportadorSearch={transportadorSearch} />
+      <DataGrid data={filteredData} placaSearch={placa as any} transportadorSearch={transportadorSearch} />
     </div>
   );
 }

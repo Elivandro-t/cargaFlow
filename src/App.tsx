@@ -9,7 +9,6 @@ import LoginPage from "./components/LoginPage";
 import { Dashboard } from "./components/Dashboard";
 import { SLAConfigEditor } from "./components/SLAConfigEditor";
 import { PlateSearch } from "./components/PlateSearch";
-import AdminPage from "./components/AdminPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -56,11 +55,6 @@ export default function App() {
                   <>nada</>
                 </AdminRoute>
               } />
-
-              <Route path="admin-users" element={
-                <AdminRoute><AdminPage /></AdminRoute>
-              } />
-
             </Route>
 
             {/* Redirecionamento padrão */}
