@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig, InternalAxiosRequestConfig } from 'axios';
 
-const BASE_URL = 'http://localhost:8080';
+const BASE_URL = 'http://10.220.112.111:8087';
 const BASE_URL2 = 'http://10.220.112.111:8083';
 
 // ── Instância principal (Porta 8081) ───────────────────────────
